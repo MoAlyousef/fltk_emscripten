@@ -32,11 +32,6 @@ int main() {
   col1->margin(10, 10, 10, 10);
   row2->fixed(col1, 150);
   new Fl_Box(0, 0, 0, 0);
-  auto *border = new Fl_Button(0, 0, 0, 0, "Toggle Border");
-  border->color(fl_darker(FL_RED));
-  border->selection_color(fl_darker(FL_GREEN));
-  col1->fixed(border, 30);
-  new Fl_Box(0, 0, 0, 0);
   auto *scheme = new Fl_Choice(0, 0, 0, 0);
   scheme->add("base|gtk+|plastic|gleam|oxy");
   scheme->tooltip("Toggle schemes");
@@ -88,12 +83,6 @@ int main() {
         Fl::scheme(c->mvalue()->label());
       },
       nullptr);
-  border->callback(
-      [](auto *, auto *w) {
-        auto *win = (Fl_Double_Window *)w;
-        win->border(!win->border());
-      },
-      window);
   color_btn->callback(
       [](Fl_Widget *w, void *arg) {
         auto *disp = (Fl_Box *)arg;

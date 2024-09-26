@@ -14,7 +14,6 @@ int main() {
   Fl::background(55, 55, 55);
   Fl::background2(70, 70, 70);
   Fl::foreground(255, 255, 255);
-  Fl::set_font(FL_HELVETICA, " Tahoma");
   auto *win = new Fl_Double_Window(Fl::w() / 2 - 200, Fl::h() / 2 - 150, 400,
                                    300, "index");
   auto *col = new Fl_Flex(0, 0, 400, 300);
